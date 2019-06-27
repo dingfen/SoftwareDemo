@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane layoutX="-1.0" prefHeight="675.0" prefWidth="1211.0" styleClass="blue-theme" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <top>
+      <HBox stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="30.0" prefWidth="593.0" HBox.hgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                <ColumnConstraints fillWidth="false" halignment="LEFT" minWidth="20.0" percentWidth="60.0" prefWidth="100.0" />
+                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" percentWidth="5.0" prefWidth="100.0" />
+                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <MenuButton mnemonicParsing="false" prefWidth="153.0" styleClass="btn-basic" stylesheets="@application.css" text="MenuButton" GridPane.columnIndex="3">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                  </MenuButton>
+                  <Button mnemonicParsing="false" styleClass="btn-basic" stylesheets="@application.css" text="词" GridPane.columnIndex="2" />
+                  <TextField prefWidth="252.0" promptText="请输入要搜索的歌曲名、歌手名等" styleClass="input-group" stylesheets="@application.css" GridPane.columnIndex="1" />
+                  <Label styleClass="font-title" stylesheets="@application.css" text="科大音乐" textAlignment="CENTER" />
+               </children>
+            </GridPane>
+         </children>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <left>
+      <TreeView fx:id="treeview" prefHeight="200.0" prefWidth="200.0" styleClass="gray-theme" stylesheets="@application.css" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <MediaView fx:id="mv" fitHeight="200.0" fitWidth="200.0" styleClass="default-theme" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox prefHeight="42.0" prefWidth="1211.0" styleClass="default-theme" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane HBox.hgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="5.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="5.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="5.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="5.0" prefWidth="100.0" />
+                  <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" percentWidth="5.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="previousbtn" mnemonicParsing="false" styleClass="btn-radius-large" stylesheets="@application.css" />
+                  <Button fx:id="playbtn" mnemonicParsing="false" onAction="#play" styleClass="btn-radius-large" GridPane.columnIndex="1" />
+                  <Button fx:id="nextbtn" mnemonicParsing="false" styleClass="btn-radius-large" GridPane.columnIndex="2" />
+                  <Button fx:id="volumn" mnemonicParsing="false" styleClass="btn-radius-large" GridPane.columnIndex="5" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="时间/00:00" GridPane.columnIndex="3" />
+                  <Slider GridPane.columnIndex="4" />
+                  <Slider fx:id="volumeSlider" prefHeight="24.0" prefWidth="178.0" GridPane.columnIndex="6" />
+                  <Button fx:id="fullScreenbtn" mnemonicParsing="false" text="全屏" GridPane.columnIndex="7" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
